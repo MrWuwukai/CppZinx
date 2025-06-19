@@ -75,10 +75,24 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
+    <ClCompile Include="CmdCheck.cpp" />
+    <ClCompile Include="CmdMsg.cpp" />
+    <ClCompile Include="demo_cmd.cpp" />
+    <ClCompile Include="demo_datetime.cpp" />
+    <ClCompile Include="demo_exit.cpp" />
     <ClCompile Include="init.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Roles.cpp" />
+    <ClCompile Include="StdInChannel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CmdCheck.h" />
+    <ClInclude Include="CmdMsg.h" />
+    <ClInclude Include="Roles.h" />
+    <ClInclude Include="StdInChannel.h" />
   </ItemGroup>
   <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
