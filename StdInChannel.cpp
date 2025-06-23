@@ -82,3 +82,13 @@ AZinxHandler* StdOutChannel::GetInputNextStage(BytesMsg& _oInput) {
     // 返回 nullptr，表示没有下一个处理阶段（或由框架决定）
     return nullptr;
 }
+
+AZinxHandler* myTcpData::GetInputNextStage(BytesMsg& _oInput)
+{
+    return CmdCheck::GetInstance();
+}
+
+ZinxTcpData* myFact::CreateTcpDataChannel(int _fd)
+{
+    return new myTcpData(_fd);
+}

@@ -14,5 +14,7 @@ public:
     static CmdCheck* GetInstance() {
         return poSingle;
     }
+
+    std::string szOutChannel;
 };
 
