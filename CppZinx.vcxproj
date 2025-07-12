@@ -80,10 +80,16 @@
     <ClCompile Include="demo_cmd.cpp" />
     <ClCompile Include="demo_datetime.cpp" />
     <ClCompile Include="demo_exit.cpp" />
+    <ClCompile Include="GameChannel.cpp" />
+    <ClCompile Include="GameMsg.cpp" />
+    <ClCompile Include="GameProtocol.cpp" />
+    <ClCompile Include="GameRole.cpp" />
     <ClCompile Include="init.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Roles.cpp" />
     <ClCompile Include="StdInChannel.cpp" />
+    <ClCompile Include="test_gamechannel.cpp" />
+    <ClCompile Include="test_gamemsg.cpp" />
     <ClCompile Include="ZinxTimer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -92,6 +98,10 @@
   <ItemGroup>
     <ClInclude Include="CmdCheck.h" />
     <ClInclude Include="CmdMsg.h" />
+    <ClInclude Include="GameChannel.h" />
+    <ClInclude Include="GameMsg.h" />
+    <ClInclude Include="GameProtocol.h" />
+    <ClInclude Include="GameRole.h" />
     <ClInclude Include="Roles.h" />
     <ClInclude Include="StdInChannel.h" />
     <ClInclude Include="ZinxTimer.h" />
