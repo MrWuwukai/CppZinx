@@ -1,6 +1,7 @@
 #pragma once
 #include <zinx.h>
 #include <google/protobuf/message.h>
+#include <list>
 class GameMsg :
     public UserData
 {
@@ -23,5 +24,10 @@ public:
     std::string serialize();
 
     virtual ~GameMsg();
+};
+
+class MultiMsg :public UserData {
+public:
+    std::list<GameMsg*> m_Msgs;
 };
 
