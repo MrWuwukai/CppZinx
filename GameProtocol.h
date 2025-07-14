@@ -2,9 +2,8 @@
 #include <zinx.h>
 
 class GameChannel;
-class GameProtocol :
-    public Iprotocol
-{
+class GameRole;
+class GameProtocol : public Iprotocol {
 public:
     GameProtocol();
     virtual ~GameProtocol();
@@ -16,6 +15,7 @@ public:
     virtual Ichannel* GetMsgSender(BytesMsg& _oBytes) override;
 
     GameChannel* m_channel = NULL;
+    GameRole* m_role = NULL;
 private:
     std::string szTcpBuffer; // »º´æ¿é
 };

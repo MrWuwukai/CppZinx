@@ -90,6 +90,7 @@
     <ClCompile Include="StdInChannel.cpp" />
     <ClCompile Include="test_gamechannel.cpp" />
     <ClCompile Include="test_gamemsg.cpp" />
+    <ClCompile Include="test_gamerole.cpp" />
     <ClCompile Include="ZinxTimer.cpp" />
   </ItemGroup>
   <ItemGroup>

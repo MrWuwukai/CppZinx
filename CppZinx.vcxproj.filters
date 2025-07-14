@@ -21,6 +21,9 @@
     <ClCompile Include="test_gamemsg.cpp">
       <Filter>test</Filter>
     </ClCompile>
+    <ClCompile Include="test_gamerole.cpp">
+      <Filter>test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CmdCheck.h" />

@@ -2,6 +2,7 @@
 #include <iostream>
 #include "GameMsg.h"
 #include "GameChannel.h"
+#include "GameRole.h"
 using namespace std;
 
 GameProtocol::GameProtocol()
@@ -84,7 +85,9 @@ std::string* GameProtocol::response2raw(UserData& _oUserData) {
     return pret;
 }
 
-Irole* GameProtocol::GetMsgProcessor(UserDataMsg& _oUserDataMsg) { return nullptr; }
+Irole* GameProtocol::GetMsgProcessor(UserDataMsg& _oUserDataMsg) {
+    return m_role;
+}
 
 /*返回数据发送的通道*/
 Ichannel* GameProtocol::GetMsgSender(BytesMsg& _oBytes) {
