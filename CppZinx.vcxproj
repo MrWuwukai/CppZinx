@@ -75,6 +75,7 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <ItemGroup>
+    <ClCompile Include="AOIWorld.cpp" />
     <ClCompile Include="CmdCheck.cpp" />
     <ClCompile Include="CmdMsg.cpp" />
     <ClCompile Include="demo_cmd.cpp" />
@@ -97,6 +98,7 @@
     <None Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AOIWorld.h" />
     <ClInclude Include="CmdCheck.h" />
     <ClInclude Include="CmdMsg.h" />
     <ClInclude Include="GameChannel.h" />

@@ -1,10 +1,16 @@
 #include "GameRole.h"
 #include "GameMsg.h"
+#include "msg.pb.h"
 #include <iostream>
 
-bool GameRole::Init()
-{
-    return true;
+/*创建游戏世界全局对象*/
+static AOIWorld world(0, 400, 0, 400, 20, 20);
+
+bool GameRole::Init() {
+    /*添加自己到游戏世界*/
+    bool bRet = false;
+    bRet = world.AddPlayer(this);
+    return bRet;
 }
 
 UserData* GameRole::ProcMsg(UserData& _poUserData)
@@ -20,6 +26,14 @@ UserData* GameRole::ProcMsg(UserData& _poUserData)
     return nullptr;
 }
 
-void GameRole::Fini()
-{
+void GameRole::Fini(){
+    world.AddPlayer(this);
+}
+
+int GameRole::GetX(){
+    return (int)x;
+}
+
+int GameRole::GetY(){
+    return (int)z;
 }

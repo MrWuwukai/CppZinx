@@ -24,6 +24,9 @@
     <ClCompile Include="test_gamerole.cpp">
       <Filter>test</Filter>
     </ClCompile>
+    <ClCompile Include="AOIWorld.cpp">
+      <Filter>roles</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CmdCheck.h" />
@@ -35,6 +38,9 @@
     <ClInclude Include="GameMsg.h" />
     <ClInclude Include="GameProtocol.h" />
     <ClInclude Include="GameRole.h" />
+    <ClInclude Include="AOIWorld.h">
+      <Filter>roles</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
@@ -42,6 +48,9 @@
   <ItemGroup>
     <Filter Include="test">
       <UniqueIdentifier>{000958a9-e497-49cb-9ff0-05c63d5d39f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="roles">
+      <UniqueIdentifier>{aeb4105b-8ba9-4dd7-bffa-53d93d5b95c4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

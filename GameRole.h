@@ -1,17 +1,28 @@
-#pragma once
+ï»¿#pragma once
 #include <zinx.h>
 
-class GameProtocol;// Ö»ÉùÃ÷Ò»ÏÂÓĞÕâ¸öÀà£¬Ö»Ê¹ÓÃÖ¸Õë£¬ÕâÑù¾Í±ÜÃâinclude
-class GameRole : public Irole {
+#include "AOIWorld.h"
+
+class GameProtocol;// åªå£°æ˜ä¸€ä¸‹æœ‰è¿™ä¸ªç±»ï¼Œåªä½¿ç”¨æŒ‡é’ˆï¼Œè¿™æ ·å°±é¿å…include
+class GameRole : public Irole, public Player {
 public:
     GameRole();
     virtual ~GameRole();
 
-    // Í¨¹ı Irole ¼Ì³Ğ
+    // é€šè¿‡ Irole ç»§æ‰¿
     virtual bool Init() override;
     virtual UserData* ProcMsg(UserData& _poUserData) override;
     virtual void Fini() override;
 
     GamePrptocol* m_pProto = NULL;
+private:
+    // init position
+    float x = 0;
+    float y = 0;
+    float z = 0;
+    float v = 0;
+    int iPid = 0;
+    std::string szName;
+    GameMsg* CreateIDNameLogin();
 };
 
