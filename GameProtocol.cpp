@@ -9,8 +9,12 @@ GameProtocol::GameProtocol()
 {
 }
 
-GameProtocol::~GameProtocol()
-{
+GameProtocol::~GameProtocol() {
+    if (NULL != m_Role)
+    {
+        ZinxKernel::Zinx_Del_Role(*m_Role);
+        delete m_Role;
+    }
 }
 
 /*

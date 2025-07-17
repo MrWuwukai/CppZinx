@@ -24,5 +24,8 @@ private:
     int iPid = 0;
     std::string szName;
     GameMsg* CreateIDNameLogin();
+    GameMsg* CreateSrdPlayers();
+    GameMsg* CreateSelfPostion();
+    GameMsg* CreateIDNameLogoff();
 };
 
