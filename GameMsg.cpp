@@ -36,6 +36,12 @@ GameMsg::GameMsg(MSG_TYPE _type, std::string _stream) : enMsgType(_type) {
     pMsg->ParseFromString(_stream);
 }
 
+GameMsg::~GameMsg() {
+    if (NULL != pMsg) {
+        delete pMsg;
+    }
+}
+
 std::string GameMsg::serialize()
 {
     std::string ret;

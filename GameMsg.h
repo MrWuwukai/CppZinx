@@ -19,6 +19,7 @@ public:
 
     GameMsg(MSG_TYPE _type, google::protobuf::Message* _pMsg);
     GameMsg(MSG_TYPE type, std::string _stream);
+    ~GameMsg();
 
     /*序列化本消息*/
     std::string serialize();
