@@ -5,6 +5,8 @@
 #include "ZinxTimer.h"
 #include "msg.pb.h"
 #include <iostream>
+#include <fstream>
+#include <hiredis/hiredis.h>
 
 /*创建游戏世界全局对象*/
 static AOIWorld world(0, 400, 0, 400, 20, 20);
@@ -54,6 +56,19 @@ bool GameRole::Init() {
             ZinxKernel::Zinx_SendOut(*pmsg, *(pRole->m_pProto));
         }
     }
+
+    ////追加记录当前姓名到文件
+    //ofstream name_record("/tmp/name_record", ios::app );
+    //name_record << szName << std::endl;
+    //记录当前姓名到redis的game_name
+    //1 连接redis
+    auto context = redisConnect("127.0.0.1", 6379);
+    //2 发送lpush命令
+    if (NULL != context) {
+        freeReplyObject(redisCommand(context, "lpush game_name %s", szName.c_str()));
+        redisFree(context);
+    }
+
     return bRet;
 }
 
@@ -157,9 +172,32 @@ void GameRole::Fini(){
     /*判断是否是最后一个玩家--->起定时器*/
     if (ZinxKernel::Zinx_GetAllRole().size() <= 1)
     {
-        //起退出定时器
+        //退出定时器
         TimerOutMng::GetInstance().AddTask(&g_exit_timer);
     }
+
+    ////从文件中删掉当前姓名
+    ////1,从文件中读到所有姓名
+    //list <string> cur_name_list;
+    //ifstream input_stream("/tmp/name_record");
+    //string tmp;
+    //while (getline(input_stream, tmp)) {
+    //    cur_name_list.push_back(tmp);
+    //}
+    //// 把除本人之外的名字重新写入
+    //ofstream output_stream("/tmp/name_record");
+    //for (auto name : cur_name_list) {
+    //    if (name != szName) {
+    //        output_stream << name << endl;
+    //    }
+    //}
+    //从redis game_name中删掉当前姓名
+    auto context = redisConnect("127.0.0.1", 6379);
+    if (NULL != context) {
+        freeReplyObject(redisCommand(context, "lrem game_name 1 %s", szName.c_str()));
+        redisFree(context);
+    }
+
 }
 
 int GameRole::GetX(){

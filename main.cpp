@@ -4,6 +4,56 @@
 #include <ZinxTCP.h>
 #include "ZinxTimer.h"
 
+void daemonlize() {
+	//1 fork
+	int ipid = fork();
+	if (0 > ipid) {
+		exit(-1);
+	}
+
+	if (0 < ipid) {
+		//2 父进程退出
+		exit(0);
+	}
+
+	//3 子进程 设置回话ID
+	setsid();
+
+	//4 子进程 设置指向路径
+	// 此处不改
+	 
+	//5 子进程 重定向3个文件描述到/dev/null
+	int nullfd = open("/dev/null", O_RDWR);
+	if (nullfd >= 0) {
+		dup2(nullfd, 0);
+		dup2(nullfd, 1);
+		dup2(nullfd, 2);
+		close(nullfd);
+	}
+
+	//进程监控
+	while (1) {
+		int pid = fork();
+		if (0 > pid) {
+			exit(-1);
+		}
+
+		/*父进程等子进程退出*/
+		if (0 < pid) {
+			int iStatus = 0;
+			wait(&iStatus);
+			if (0 == iStatus) {
+				exit(0);
+			}
+		}
+
+		/*子进程跳出循环执行游戏业务*/
+		else {
+			break;
+		}
+	}
+}
+
 class timerhello :public TimerOutProc {
 	virtual void Proc() override
 	{
@@ -31,6 +81,8 @@ class timerbye :public TimerOutProc {
 };
 int main()
 {
+	daemonlize();
+
 	/*1-初始化框架*/
 	ZinxKernel::ZinxKernelInit();
 	TimerOutMng::GetInstance().AddTask(new timerhello());
