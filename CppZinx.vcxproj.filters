@@ -27,6 +27,33 @@
     <ClCompile Include="AOIWorld.cpp">
       <Filter>roles</Filter>
     </ClCompile>
+    <ClCompile Include="kernel.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="StdInChannel1.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="kernel_main.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Ichannel.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="StdOutChannel1.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="FIFO_channel.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="ProcessFunc.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="ZinxHandler.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="TcpDataChannel.cpp">
+      <Filter>kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CmdCheck.h" />
@@ -41,6 +68,30 @@
     <ClInclude Include="AOIWorld.h">
       <Filter>roles</Filter>
     </ClInclude>
+    <ClInclude Include="kernel.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="StdInChannel1.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="Ichannel.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="StdOutChannel1.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="FIFO_channel.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcessFunc.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="ZinxHandler.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="TcpDataChannel.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
@@ -51,6 +102,9 @@
     </Filter>
     <Filter Include="roles">
       <UniqueIdentifier>{aeb4105b-8ba9-4dd7-bffa-53d93d5b95c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="kernel">
+      <UniqueIdentifier>{2f571107-5cc7-41f2-a7d9-5de5b7a390e3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
